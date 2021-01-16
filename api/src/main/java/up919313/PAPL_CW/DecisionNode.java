@@ -30,4 +30,18 @@ public class DecisionNode {
 	public NodeType getNodeType() {
 		return nodeType;
 	}
+
+	public DecisionNode buildDecisionNode(DecisionNode[] decisionNodes){
+		for (int i = 0; i < this.linkedNodeIds.length ; i++) {
+			DecisionNode linkedNode = decisionNodes[i];
+			try {
+				this.linkedNodes[i] = DecisionMap.findNodeInArray(linkedNode.getNodeId(), decisionNodes);
+				this.linkedNodes[i].buildDecisionNode(decisionNodes);
+			} catch (NodeNotFoundException e){
+				System.out.println(e.getMessage());
+			}
+		}
+
+		return this;
+	}
 }

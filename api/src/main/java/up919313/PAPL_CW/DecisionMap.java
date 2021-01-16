@@ -7,23 +7,24 @@ public class DecisionMap {
 	private DecisionNode tail;
 
 	public DecisionMap(JsonNode[] map){
-
+		DecisionNode[] decisionNodes = buildDecisionNodes(map);
+		buildDecisionMap(decisionNodes);
 	}
 
-	private DecisionNode[] buildDecisionNodes(JsonNode[] nodes){
-		ArrayList<DecisionNode> decisionNodes = new ArrayList<>();
-		for (JsonNode node:nodes) {
-			decisionNodes.add(new DecisionNode(node.getNode_id(), node.getNode_text(),node.getNodeType(), node.getLinked_nodes()));
+	private void buildDecisionMap(DecisionNode[] decisionNodes){
+		try {
+			this.head = findNodeInArray(0, decisionNodes);
+			this.head.buildDecisionNode(decisionNodes);
+
+			this.tail = findNodeInArray(decisionNodes.length -1, decisionNodes);
+		} catch (NodeNotFoundException e) {
+			System.out.println(e.getMessage());
+
 		}
-		return (DecisionNode[]) decisionNodes.toArray();
-	}
-	private void buildDecisionMap(DecisionNode[] decisionNodes, JsonNode[] JsonNodes){
 
 	}
 
-//	private DecisionNode getNodeById(int nodeId){
-	//}
-	private static DecisionNode findNodeInArray(int nodeId, DecisionNode[] decisionNodes) throws NodeNotFoundException{
+	public static DecisionNode findNodeInArray(int nodeId, DecisionNode[] decisionNodes) throws NodeNotFoundException{
 		int front =0; int back = decisionNodes.length;
 		while (front <= back){
 			int nodeFrontId = decisionNodes[front].getNodeId();
@@ -38,6 +39,14 @@ public class DecisionMap {
 			back--;
 		}
 		throw new NodeNotFoundException("NodeId:"+nodeId+" not found");
+	}
+
+	private static DecisionNode[] buildDecisionNodes(JsonNode[] nodes){
+		ArrayList<DecisionNode> decisionNodes = new ArrayList<>();
+		for (JsonNode node:nodes) {
+			decisionNodes.add(new DecisionNode(node.getNode_id(), node.getNode_text(),node.getNode_type(), node.getLinked_nodes()));
+		}
+		return (DecisionNode[]) decisionNodes.toArray();
 	}
 
 }
