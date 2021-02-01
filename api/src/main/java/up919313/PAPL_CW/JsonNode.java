@@ -15,14 +15,20 @@ public class JsonNode {
 		this.linked_nodes = linked_nodes;
 		this.node_type = getNodeTypeFromString(node_type);
 	}
+	public JsonNode(DecisionNode node){
+		this.node_id = node.getNodeId();
+		this.node_text = node.getNodeText();
+		this.linked_nodes = node.getLinkedNodeIds();
+		this.node_type = node.getNodeType();
+	}
 
 	public JsonNode(JSONObject node){
-		this.node_id = (int) node.get("node_id");
+		this.node_id = Math.toIntExact((Long) node.get("node_id"));
 		this.node_text = (String) node.get("node_text");
 		this.node_type = getNodeTypeFromString((String) node.get("node_type"));
 		JSONArray JSONlinkedNodeIds = (JSONArray) node.get("linked_nodes");
 		this.linked_nodes = new int[JSONlinkedNodeIds.size()];
-		JSONlinkedNodeIds.forEach(id -> this.linked_nodes[JSONlinkedNodeIds.indexOf(id)] = (int) id);
+		JSONlinkedNodeIds.forEach(id -> this.linked_nodes[JSONlinkedNodeIds.indexOf(id)] = Math.toIntExact((long) id));
 	}
 
 	public int getNode_id() {

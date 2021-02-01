@@ -12,7 +12,7 @@ public class DecisionNode {
 		this.nodeText = nodeText;
 		this.nodeType = nodeType;
 		this.linkedNodeIds = linkedNodeIds;
-		this.linkedNodes = new DecisionNode[linkedNodeIds.length];
+		this.linkedNodes = null;
 	}
 
 	public int getNodeId() {
@@ -30,18 +30,40 @@ public class DecisionNode {
 	public NodeType getNodeType() {
 		return nodeType;
 	}
-
-	public DecisionNode buildDecisionNode(DecisionNode[] decisionNodes){
-		for (int i = 0; i < this.linkedNodeIds.length ; i++) {
-			DecisionNode linkedNode = decisionNodes[i];
-			try {
-				this.linkedNodes[i] = DecisionMap.findNodeInArray(linkedNode.getNodeId(), decisionNodes);
-				this.linkedNodes[i].buildDecisionNode(decisionNodes);
-			} catch (NodeNotFoundException e){
-				System.out.println(e.getMessage());
+	
+	public int[] getLinkedNodeIds() {
+		return linkedNodeIds;
+	}
+	
+	public void buildDecisionNode(DecisionNode[] decisionNodes){
+		try {
+			this.linkedNodes = new DecisionNode[linkedNodeIds.length];
+			for (int i = 0; i < this.linkedNodeIds.length; i++) {
+				this.linkedNodes[i] = DecisionMap.findNodeInArray(linkedNodeIds[i], decisionNodes);
+				System.out.println(this.toString());
 			}
+			for (DecisionNode linkedNode : this.linkedNodes) {
+				if (linkedNode.linkedNodes == null){
+					linkedNode.buildDecisionNode(decisionNodes);
+				}
+			}
+		} catch (NodeNotFoundException e){
+			System.out.println(e.getMessage());
+			
 		}
-
-		return this;
+		
+		
+		
+	}
+	
+	@Override
+	public String toString() {
+		String nodeIDs = "\nlinkedNodeIDs: {";
+		for (int id:this.linkedNodeIds) {
+			nodeIDs += id + ",";
+		}
+		nodeIDs += "}";
+		
+		return "\n-------\nNodeId: " + this.nodeId + "\nNodeText: " + this.nodeText +"\nNodeType: " + this.nodeType + nodeIDs;
 	}
 }
