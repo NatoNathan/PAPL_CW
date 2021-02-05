@@ -1,0 +1,492 @@
+[
+	{
+		"node_id": 0,
+		"node_text": "Hey, Hey,",
+		"linked_nodes": [
+			1
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 1,
+		"node_text": "You there?",
+		"linked_nodes": [
+			2,
+			3,
+			5,
+			6
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 2,
+		"node_text": "Yes?",
+		"linked_nodes": [
+			5,
+			6
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 3,
+		"node_text": "No",
+		"linked_nodes": [
+			4
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 4,
+		"node_text": "Well you did respond!",
+		"linked_nodes": [
+			5,
+			6,
+			7,
+			10,
+			11
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 5,
+		"node_text": "Who R U?",
+		"linked_nodes": [
+			9
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 6,
+		"node_text": "<Wait>",
+		"linked_nodes": [
+			8
+		],
+		"node_type": "action"
+	},
+	{
+		"node_id": 7,
+		"node_text": "Go away",
+		"linked_nodes": [
+			0
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 8,
+		"node_text": "I Need your Help",
+		"linked_nodes": [
+			13,
+			14,
+			15
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 9,
+		"node_text": "A friend of a friend",
+		"linked_nodes": [
+			8
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 10,
+		"node_text": "I'm busy",
+		"linked_nodes": [
+			12
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 11,
+		"node_text": "<Block Number>",
+		"linked_nodes": [
+			34
+		],
+		"node_type": "action"
+	},
+	{
+		"node_id": 12,
+		"node_text": "Please, I need your help!",
+		"linked_nodes": [
+			7,
+			11,
+			15
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 13,
+		"node_text": "<Wait>",
+		"linked_nodes": [
+			17
+		],
+		"node_type": "action"
+	},
+	{
+		"node_id": 14,
+		"node_text": "Why?",
+		"linked_nodes": [
+			17
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 15,
+		"node_text": "I don't know U",
+		"linked_nodes": [
+			18
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 16,
+		"node_text": "I don't know a Dave",
+		"linked_nodes": [
+			11
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 17,
+		"node_text": "I may be in a spot of trouble",
+		"linked_nodes": [
+			20
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 18,
+		"node_text": "Please, I Really need your help, it's life or death!!!",
+		"linked_nodes": [
+			23,
+			29
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 19,
+		"node_text": "I still don't know who you are",
+		"linked_nodes": [
+			18
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 20,
+		"node_text": "It's life or death!!!",
+		"linked_nodes": [
+			23,
+			24
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 21,
+		"node_text": "Dave",
+		"linked_nodes": [
+			16,
+			19,
+			15
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 22,
+		"node_text": "<Wait>",
+		"linked_nodes": [
+			26
+		],
+		"node_type": "action"
+	},
+	{
+		"node_id": 23,
+		"node_text": "Why Me?",
+		"linked_nodes": [
+			28
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 24,
+		"node_text": "How can I help?",
+		"linked_nodes": [
+			27
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 25,
+		"node_text": "Who is our mutual friend?",
+		"linked_nodes": [
+			21
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 26,
+		"node_text": "I'm a friend of a friend",
+		"linked_nodes": [
+			25
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 27,
+		"node_text": "I need someone with physical access to your work Computer.",
+		"linked_nodes": [
+			30,
+			31
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 28,
+		"node_text": "It's your job, you have access I need.",
+		"linked_nodes": [
+			31
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 29,
+		"node_text": "I still don't know U",
+		"linked_nodes": [
+			22,
+			11,
+			33
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 30,
+		"node_text": "This is dangerous talk",
+		"linked_nodes": [
+			31,
+			36,
+			38,
+			35
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 31,
+		"node_text": "I should report this!",
+		"linked_nodes": [
+			32
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 32,
+		"node_text": "Please, hear me out!",
+		"linked_nodes": [
+			29,
+			33
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 33,
+		"node_text": "<Report to Company security>",
+		"linked_nodes": [
+			34
+		],
+		"node_type": "action"
+	},
+	{
+		"node_id": 34,
+		"node_text": "Game Over Mystery Person Dies",
+		"linked_nodes": [],
+		"node_type": "end"
+	},
+	{
+		"node_id": 35,
+		"node_text": "What do you want?",
+		"linked_nodes": [
+			42
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 36,
+		"node_text": "Who are you?",
+		"linked_nodes": [
+			39
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 37,
+		"node_text": "I can't get involved, I need report this!",
+		"linked_nodes": [
+			33
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 38,
+		"node_text": "Can I trust you?",
+		"linked_nodes": [
+			40
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 39,
+		"node_text": "A concerned citizen",
+		"linked_nodes": [
+			41
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 40,
+		"node_text": "Yes, i'm on your side",
+		"linked_nodes": [
+			41
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 41,
+		"node_text": "I know you want to change things.",
+		"linked_nodes": [
+			43,
+			44,
+			37
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 42,
+		"node_text": "Your employer needs to be held accountable!",
+		"linked_nodes": [
+			44,
+			45,
+			52
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 43,
+		"node_text": "<Wait>",
+		"linked_nodes": [
+			42
+		],
+		"node_type": "action"
+	},
+	{
+		"node_id": 44,
+		"node_text": "Can I trust you?",
+		"linked_nodes": [
+			46
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 45,
+		"node_text": "Why trust Me?",
+		"linked_nodes": [
+			47
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 46,
+		"node_text": "Why should I trust you?",
+		"linked_nodes": [
+			47
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 47,
+		"node_text": "My organisation wants to hold your employer accountable",
+		"linked_nodes": [
+			48
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 48,
+		"node_text": "We believe you wish to hold your employer accountable as well.",
+		"linked_nodes": [
+			50,
+			49
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 49,
+		"node_text": "I'm IN",
+		"linked_nodes": [
+			52
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 50,
+		"node_text": "This is illegal, there must be a legal way to hold my employer accountable",
+		"linked_nodes": [
+			51
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 51,
+		"node_text": "We wish there was but your employer holds a lot of political capital",
+		"linked_nodes": [
+			49,
+			54
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 52,
+		"node_text": "Let's do this!",
+		"linked_nodes": [
+			53
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 53,
+		"node_text": "You need to download and upload this file, on any PC on the air gapped network",
+		"linked_nodes": [
+			54,
+			55
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 54,
+		"node_text": "I'm sorry",
+		"linked_nodes": [
+			37
+		],
+		"node_type": "sent"
+	},
+	{
+		"node_id": 55,
+		"node_text": "<Upload the File>",
+		"linked_nodes": [
+			56
+		],
+		"node_type": "action"
+	},
+	{
+		"node_id": 56,
+		"node_text": "Thank you for all your help.",
+		"linked_nodes": [
+			57
+		],
+		"node_type": "received"
+	},
+	{
+		"node_id": 57,
+		"node_text": "Game Complete",
+		"linked_nodes": [],
+		"node_type": "end"
+	}
+]

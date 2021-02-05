@@ -40,7 +40,7 @@ public class DecisionNode {
 			this.linkedNodes = new DecisionNode[linkedNodeIds.length];
 			for (int i = 0; i < this.linkedNodeIds.length; i++) {
 				this.linkedNodes[i] = DecisionMap.findNodeInArray(linkedNodeIds[i], decisionNodes);
-				System.out.println(this.toString());
+			//	System.out.println(this.toString());
 			}
 			for (DecisionNode linkedNode : this.linkedNodes) {
 				if (linkedNode.linkedNodes == null){
@@ -49,11 +49,7 @@ public class DecisionNode {
 			}
 		} catch (NodeNotFoundException e){
 			System.out.println(e.getMessage());
-			
 		}
-		
-		
-		
 	}
 	
 	@Override

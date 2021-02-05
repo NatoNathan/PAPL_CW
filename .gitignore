@@ -45,3 +45,5 @@ CW_map.csv
 api/.idea/
 
 api/.settings/
+
+webapp/yarn.lock

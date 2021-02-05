@@ -16,12 +16,13 @@ import java.util.ArrayList;
 public class DecisionMapController {
 
 	DecisionMap decisionMap;
-	
-	@GetMapping("start")
+	public static final String APPLICATION_JSON_UTF8_VALUE = "application/json";
+	@GetMapping(value="api/start",  produces = APPLICATION_JSON_UTF8_VALUE)
 	public SimpleNode start(){
+		this.loadDecisionMap();
 		return new SimpleNode(decisionMap.getHead());
 	}
-	@GetMapping("next/{nodeID}")
+	@GetMapping(value="api/next/{nodeID}",  produces = APPLICATION_JSON_UTF8_VALUE)
 	public SimpleNode next(@PathVariable("nodeID") int nodeID){
 		return new SimpleNode(decisionMap.pickNode(nodeID));
 	}
@@ -31,11 +32,10 @@ public class DecisionMapController {
 		JSONParser jsonParser = new JSONParser();
 		ArrayList<JsonNode> nodes = new ArrayList<>();
 
-		try (FileReader reader = new FileReader("CW_map.json"))
+		try (FileReader reader = new FileReader("newMap.json"))
 		{
 			//Read JSON file
 			Object obj = jsonParser.parse(reader);
-
 
 			JSONArray jsonArrayNodes = (JSONArray) obj;
 			jsonArrayNodes.forEach(n -> {
